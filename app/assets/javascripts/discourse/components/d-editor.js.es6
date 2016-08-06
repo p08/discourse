@@ -316,7 +316,7 @@ export default Ember.Component.extend({
               selected.pre = newPre;
               selected.start -= numOfRemovedChars;
               selected.end -= numOfRemovedChars;
-              self._addText(selected, `:${title}:`);
+              self._addText(selected, `${title}:`);
             }
           });
           return "";
