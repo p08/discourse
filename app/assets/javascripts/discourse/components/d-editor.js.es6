@@ -325,7 +325,7 @@ export default Ember.Component.extend({
 
       dataSource(term) {
         return new Ember.RSVP.Promise(resolve => {
-          const full = `:${term}`;
+          const full = `${term}`;
           term = term.toLowerCase();
 
           if (term === "") {
