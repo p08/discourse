@@ -296,14 +296,14 @@ export default Ember.Component.extend({
 
     $editorInput.autocomplete({
       template: template,
-      key: "",
+      key: ":",
       afterComplete(text) {
         self.set('value', text);
       },
 
       transformComplete(v) {
         if (v.code) {
-          return `:${v.code}:`;
+          return `${v.code}:`;
         } else {
           showSelector({
             appendTo: self.$(),
@@ -325,7 +325,7 @@ export default Ember.Component.extend({
 
       dataSource(term) {
         return new Ember.RSVP.Promise(resolve => {
-          const full = `${term}`;
+          const full = `:${term}`;
           term = term.toLowerCase();
 
           if (term === "") {
